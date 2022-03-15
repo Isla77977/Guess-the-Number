@@ -21,14 +21,20 @@ while guess != answer:
   if lives <= 0:
     print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
     break
+  if guess < answer:
+    print("The number is higher than {}.".format(guess))
+  elif guess > answer:
+    print("The number is smaller than {}".format(guess))
+  elif guess == answer:
+    print(" ")
 
 
 
 #Things to add:
-# -Lives system
+# -Lives system ✔
 # -Play again
 # -Error catching
 # -A way to clear past guesses (while still keeping guess list)
 # -Guesses being displayed
 # -Different difficulties
-# -Add higher or lower
+# -Add higher or lower ✔
