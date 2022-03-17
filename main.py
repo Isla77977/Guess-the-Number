@@ -4,7 +4,8 @@ guess = 11
 difficulty = 'N/A'
 def introduction(difficulty):
 #Ask the user their name.
-  str_name = input("Welcome! Please enter your name: ").strip().title()
+  str_name = input("Welcome! Please enter your name: \n").strip().title()
+#Added a \n so the input will be on the next line. (3/18/3 -> 9:56am)
 #Add difficulties
   print("The game you will be playing is a Number Guessing Game. Your task is to guess the correct \nnumber. ")
   print("Depending on what difficulty you choose, the game may be easier or harder.")
@@ -112,24 +113,28 @@ def hardmode(guess, answer, lives, str_name):
     elif guess == answer:
       print(" ")
 
+
 randomdef(answer)
 lifecount()
 print(introduction(difficulty))
 if difficulty == 'easy':
-  easymode(guess, answer, lives, str_name)
+  easymode()
 elif difficulty == 'medium':
-  mediummode(guess, answer, lives, str_name)
+  mediummode()
 elif difficulty == 'hard':
-  hardmode(guess, answer, lives, str_name)
+  hardmode()
 
 
 #Things to add:
 # -Lives system ✔
 # -Play again
-# -Error catching
+# -Error catching 
 # -A way to clear past guesses (while still keeping guess list)
 # -Guesses being displayed
 # -Different difficulties
 # -Add higher or lower ✔
-# -Add definitions
-    
+# -Add definitions ✔
+
+
+
+#CHECK WITH PEP8
