@@ -2,9 +2,19 @@
 answer = 0
 guess = 11
 difficulty = 'N/A'
+
+
 def introduction(difficulty):
 #Ask the user their name.
   str_name = input("Welcome! Please enter your name: \n").strip().title()
+  if str_name.isalnum() and not str_name.isalpha():
+    while str_name.isalnum():
+      print("ERROR - Please try again")
+      str_name = input("Enter your name: \n")
+      if str_name.isalpha():
+        print("Thank you.")
+        break
+
 #Added a \n so the input will be on the next line. (3/18/3 -> 9:56am)
 #Add difficulties
   print("The game you will be playing is a Number Guessing Game. Your task is to guess the correct \nnumber. ")
@@ -24,6 +34,7 @@ def introduction(difficulty):
     else:
       print("ERROR - Please type in a valid difficulty")
 
+
 def randomdef(answer):
   import random
   if difficulty == 'easy':
@@ -33,6 +44,7 @@ def randomdef(answer):
   elif difficulty == 'hard':
     answer = random.randrange(1, 100)
 
+
 def lifecount():
   lives = 100
   if difficulty == 'easy':
@@ -41,6 +53,7 @@ def lifecount():
     lives = 4
   elif difficulty == 'hard':
     lives = 6
+
 
 #Allow user to start guessing.
 def easymode(guess, answer, lives, str_name):
@@ -64,7 +77,6 @@ def easymode(guess, answer, lives, str_name):
       print("The number is smaller than {}".format(guess))
     elif guess == answer:
       print(" ")
-  
 
 
 #==========================================================================
@@ -90,6 +102,7 @@ def mediummode(guess, answer, lives, str_name):
     elif guess == answer:
        print(" ")
 
+
 #============================================================================
 def hardmode(guess, answer, lives, str_name):
   print("Your task is to guess a number from 1-100. Good luck!")
@@ -114,15 +127,16 @@ def hardmode(guess, answer, lives, str_name):
       print(" ")
 
 
+
 randomdef(answer)
 lifecount()
 print(introduction(difficulty))
 if difficulty == 'easy':
-  easymode()
+  print(easymode(guess, answer, lives, str_name))
 elif difficulty == 'medium':
-  mediummode()
+  print(mediummode(guess, answer, lives, str_name))
 elif difficulty == 'hard':
-  hardmode()
+  print(hardmode(guess, answer, lives, str_name))
 
 
 #Things to add:
@@ -137,4 +151,4 @@ elif difficulty == 'hard':
 
 
 
-#CHECK WITH PEP8
+#CHECK WITH PEP8 - ADD RETURNS
