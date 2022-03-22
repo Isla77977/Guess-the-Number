@@ -55,13 +55,6 @@ if difficulty == 'easy':
     if lives <= 0:
       print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
       break
-#Gives a hint as to whether the answer is higher or lower than the users guess.
-    if guess < answer:
-      print("The number is higher than {}.".format(guess))
-    elif guess > answer:
-      print("The number is smaller than {}".format(guess))
-    elif guess == answer:
-      print(" ")
 elif difficulty == 'medium':
   print("Your task is to guess a number from 1-50. Good luck!")
   while guess != answer:
@@ -76,13 +69,6 @@ elif difficulty == 'medium':
     if lives <= 0:
       print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
       break
-#Gives a hint as to whether the answer is higher or lower than the users guess.
-    if guess < answer:
-      print("The number is higher than {}.".format(guess))
-    elif guess > answer:
-      print("The number is smaller than {}".format(guess))
-    elif guess == answer:
-       print(" ")
 elif difficulty == 'hard':
   print("Your task is to guess a number from 1-100. Good luck!")
   while guess != answer:
