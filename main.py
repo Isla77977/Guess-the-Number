@@ -16,8 +16,6 @@ def introduction(difficulty):
       if str_name.isalpha():
         print("Thank you.")
         break
-
-
 # Add difficulties
   print("The game you will be playing is a Number Guessing Game. Your task is to guess the correct \nnumber. ")
   print("Depending on what difficulty you choose, the game may be easier or harder.")
@@ -59,9 +57,6 @@ def lifecount():
 
 
 introduction(difficulty)
-
-
-# Allow user to start guessing.
 if difficulty == 'easy':
   print("Your task is to guess a number from 1-10. Good luck!")
   while guess != answer:
