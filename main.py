@@ -4,40 +4,62 @@ guess = 11
 difficulty = 'N/A'
 lives = 3948
 str_name = 'N/A'
-import random
 
 
-str_name = input("Welcome! Please enter your name: \n").strip().title()
-print("The game you will be playing is a guessing game. Your objective is to guess the number.")
-print("Depending on what difficulty you choose, the game may be easier or harder.")
-print("You must now pick a difficulty: Easy, Medium, or Hard.")
-while difficulty != 'easy' or difficulty != 'medium' or difficulty != 'hard':
-  difficulty = input("").strip().lower()
+def introduction(difficulty):
+#Ask the user their name.
+  str_name = input("Welcome! Please enter your name: \n").strip().title()
+  if str_name.isalnum() and not str_name.isalpha():
+    while str_name.isalnum():
+      print("ERROR - Please try again")
+      str_name = input("Enter your name: \n")
+      if str_name.isalpha():
+        print("Thank you.")
+        break
+
+
+#Added a \n so the input will be on the next line. (3/18/3 -> 9:56am)
+#Add difficulties
+  print("The game you will be playing is a Number Guessing Game. Your task is to guess the correct \nnumber. ")
+  print("Depending on what difficulty you choose, the game may be easier or harder.")
+  print("You must now pick a difficulty: Easy, Medium, or Hard.")
+  while difficulty != 'easy' or difficulty != 'medium' or difficulty != 'hard':
+    difficulty = input("").strip().lower()
+    if difficulty == 'easy':
+      print("Okay {}, you picked {}.".format(str_name, difficulty.title()))
+      break
+    elif difficulty == 'medium':
+      print("Okay {}, you picked {}.".format(str_name, difficulty.title()))
+      break
+    elif difficulty == 'hard':
+      print("Okay {}, you picked {}.".format(str_name, difficulty.title()))
+      break
+    else:
+      print("ERROR - Please type in a valid difficulty")
+
+
+def randomdef(answer):
+  import random
   if difficulty == 'easy':
-    print("Okay {}, you picked {}.".format(str_name, difficulty.title()))
-    break
+    answer = random.randrange(1, 10)
   elif difficulty == 'medium':
-    print("Okay {}, you picked {}.".format(str_name, difficulty.title()))
-    break
+    answer = random.randrange(1, 50)
   elif difficulty == 'hard':
-    print("Okay {}, you picked {}.".format(str_name, difficulty.title()))
-    break
-  else:
-    print("ERROR - Please type in a valid difficulty")
-if difficulty == 'easy':
-  answer = random.randrange(1, 10)
-elif difficulty == 'medium':
-  answer = random.randrange(1, 50)
-elif difficulty == 'hard':
-  answer = random.randrange(1, 100)
+    answer = random.randrange(1, 100)
 
 
-if difficulty == 'easy':
-  lives = 4
-elif difficulty == 'medium':
-  lives = 5
-elif difficulty == 'hard':
-  lives = 6
+def lifecount():
+  lives = 100
+  if difficulty == 'easy':
+    lives = 4
+  elif difficulty == 'medium':
+    lives = 5
+  elif difficulty == 'hard':
+    lives = 6
+  return(lives)
+
+
+introduction(difficulty)
 
 
 #Allow user to start guessing.
@@ -104,6 +126,7 @@ elif difficulty == 'hard':
       print("The number is smaller than {}".format(guess))
     elif guess == answer:
       print(" ")
+
 
 
 
