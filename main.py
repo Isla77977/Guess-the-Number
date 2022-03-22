@@ -15,6 +15,7 @@ def introduction(difficulty):
         print("Thank you.")
         break
 
+
 #Added a \n so the input will be on the next line. (3/18/3 -> 9:56am)
 #Add difficulties
   print("The game you will be playing is a Number Guessing Game. Your task is to guess the correct \nnumber. ")
@@ -50,9 +51,10 @@ def lifecount():
   if difficulty == 'easy':
     lives = 4
   elif difficulty == 'medium':
-    lives = 4
+    lives = 5
   elif difficulty == 'hard':
     lives = 6
+  return(lives)
 
 
 #Allow user to start guessing.
@@ -77,6 +79,7 @@ def easymode(guess, answer, lives, str_name):
       print("The number is smaller than {}".format(guess))
     elif guess == answer:
       print(" ")
+ 
 
 
 #==========================================================================
@@ -93,7 +96,7 @@ def mediummode(guess, answer, lives, str_name):
       lives -= 1
     if lives <= 0:
       print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
-    break
+      break
 #Gives a hint as to whether the answer is higher or lower than the users guess.
     if guess < answer:
       print("The number is higher than {}.".format(guess))
@@ -101,6 +104,7 @@ def mediummode(guess, answer, lives, str_name):
       print("The number is smaller than {}".format(guess))
     elif guess == answer:
        print(" ")
+
 
 
 #============================================================================
@@ -125,6 +129,7 @@ def hardmode(guess, answer, lives, str_name):
       print("The number is smaller than {}".format(guess))
     elif guess == answer:
       print(" ")
+
 
 
 
