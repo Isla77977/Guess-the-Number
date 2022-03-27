@@ -37,6 +37,7 @@ def introduction(difficulty):
 
 def randomdef(answer):
   import random
+  answer = 0
   if difficulty == 'easy':
     answer = random.randrange(1, 10)
   elif difficulty == 'medium':
