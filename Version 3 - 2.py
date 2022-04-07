@@ -4,11 +4,8 @@ lives = 3
 guess = 3948
 answer = random.randint(1,10)
 
-difficulty = input("What difficulty would you like?\n")
-while difficulty != 'easy':
-  difficulty = input("What difficulty would you like?\n")
-while difficulty == 'easy':
-  print("Your task is to guess a number from 1-10. Good luck!")
+while True:
+  print("Your task is to guess a number from 1-10 with 3 lives. Good luck!")
   while guess != answer:
     guess = int(input("Guess: "))
 #If they get it right end game, if they get it wrong continue game.
