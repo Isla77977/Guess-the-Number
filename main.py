@@ -1,4 +1,4 @@
-# Guessing game v5: Trying to make the code better, may try to add definitions again.
+# Guessing game v5: Trying to make the code better, may try to fix definitions again.
 answer = 0
 guess = 11
 difficulty = 'N/A'
@@ -15,7 +15,6 @@ def introduction(difficulty):
       print("ERROR - Please try again:\n")
       str_name = input("Please enter your name: ")
     else:
-      print("Thank you.")
       break
 
 # Add difficulties
@@ -26,12 +25,15 @@ def introduction(difficulty):
     difficulty = input("").strip().lower()
     if difficulty == 'easy':
       print("Okay {}, you picked {}.".format(str_name, difficulty.title()))
+      return(difficulty)
       break
     elif difficulty == 'medium':
       print("Okay {}, you picked {}.".format(str_name, difficulty.title()))
+      return(difficulty)
       break
     elif difficulty == 'hard':
       print("Okay {}, you picked {}.".format(str_name, difficulty.title()))
+      return(difficulty)
       break
     else:
       print("ERROR - Please type in a valid difficulty")
@@ -59,8 +61,9 @@ def lifecount():
   return(lives)
 
 
-introduction(difficulty)
-if difficulty == 'easy':
+
+
+def easy_difficulty(guess, answer, lives):
   print("Your task is to guess a number from 1-10. Good luck!")
   while guess != answer:
     guess = int(input("Guess: "))
@@ -81,7 +84,8 @@ if difficulty == 'easy':
       print("The number is smaller than {}".format(guess))
     elif guess == answer:
       print(" ")
-elif difficulty == 'medium':
+        
+def medium_difficulty(guess, answer, lives):
   print("Your task is to guess a number from 1-50. Good luck!")
   while guess != answer:
     guess = int(input("Guess: "))
@@ -101,8 +105,9 @@ elif difficulty == 'medium':
     elif guess > answer:
       print("The number is smaller than {}".format(guess))
     elif guess == answer:
-       print(" ")
-elif difficulty == 'hard':
+      print(" ")
+
+def hard_difficulty(guess, answer, lives):
   print("Your task is to guess a number from 1-100. Good luck!")
   while guess != answer:
     guess = int(input("Guess: "))
@@ -125,6 +130,14 @@ elif difficulty == 'hard':
       print(" ")
 
 
+difficulty = introduction(difficulty)
+if difficulty == 'easy':
+  easy_difficulty(guess, answer, lives)
+elif difficulty == 'medium':
+  medium_difficulty(guess, answer, lives)
+elif difficulty == 'hard':
+  hard_difficulty(guess, answer, lives)
+
 
 # Things to add:
 # - Lives system ✔
@@ -137,5 +150,3 @@ elif difficulty == 'hard':
 # - Add definitions ✔
 # - End Score (points)
 
-
-# CHECK WITH PEP8 - ADD RETURNS
