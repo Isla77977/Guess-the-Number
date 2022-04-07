@@ -2,7 +2,7 @@
 answer = 0
 guess = 11
 difficulty = 'N/A'
-lives = 3948
+lives = 314159265358979323846264338327950288419716939937510
 str_name = 'N/A'
 
 
@@ -16,6 +16,7 @@ def introduction(difficulty):
       str_name = input("Please enter your name: ")
     else:
       break
+    return str_name
 
 # Add difficulties
   print("The game you will be playing is a Number Guessing Game. Your task is to guess the correct \nnumber. ")
@@ -48,6 +49,7 @@ def randomdef(answer):
     answer = random.randrange(1, 50)
   elif difficulty == 'hard':
     answer = random.randrange(1, 100)
+  return answer
 
 
 def lifecount():
@@ -63,7 +65,7 @@ def lifecount():
 
 
 
-def easy_difficulty(guess, answer, lives):
+def easy_difficulty(guess, answer, lives, str_name):
   print("Your task is to guess a number from 1-10. Good luck!")
   while guess != answer:
     guess = int(input("Guess: "))
@@ -85,7 +87,7 @@ def easy_difficulty(guess, answer, lives):
     elif guess == answer:
       print(" ")
         
-def medium_difficulty(guess, answer, lives):
+def medium_difficulty(guess, answer, lives, str_name):
   print("Your task is to guess a number from 1-50. Good luck!")
   while guess != answer:
     guess = int(input("Guess: "))
@@ -107,7 +109,7 @@ def medium_difficulty(guess, answer, lives):
     elif guess == answer:
       print(" ")
 
-def hard_difficulty(guess, answer, lives):
+def hard_difficulty(guess, answer, lives, str_name):
   print("Your task is to guess a number from 1-100. Good luck!")
   while guess != answer:
     guess = int(input("Guess: "))
@@ -131,12 +133,14 @@ def hard_difficulty(guess, answer, lives):
 
 
 difficulty = introduction(difficulty)
+lives = lifecount()
+answer = randomdef(answer)
 if difficulty == 'easy':
-  easy_difficulty(guess, answer, lives)
+  easy_difficulty(guess, answer, lives, str_name)
 elif difficulty == 'medium':
-  medium_difficulty(guess, answer, lives)
+  medium_difficulty(guess, answer, lives, str_name)
 elif difficulty == 'hard':
-  hard_difficulty(guess, answer, lives)
+  hard_difficulty(guess, answer, lives, str_name)
 
 
 # Things to add:
