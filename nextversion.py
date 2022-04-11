@@ -1,5 +1,4 @@
-# Guessing game v5: Trying to make the code better, may try to fix definitions again.
-#It is unethical to use copywrited code.
+# Guessing game v6: Displaying Guesses, clearing console.
 answer = 0
 guess = 11
 difficulty = 'N/A'
