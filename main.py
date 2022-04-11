@@ -6,18 +6,24 @@ lives = 314159265358979323846264338327950288419716939937510
 str_name = 'N/A'
 
 
-def introduction(difficulty):
+def username(str_name):
+  list_name = []
 # Ask the user their name.
   str_name = input("Welcome! Please enter your name: \n").strip().title()
   while True:
     if str_name == '' or len(str_name) < 2 or str_name.replace(' ', '').isalpha() == False:
       print('')
       print("ERROR - Please try again:\n")
-      str_name = input("Please enter your name: ")
+      str_name = input("Please enter your name: \n")
     else:
+      list_name.append(str_name)
+      str_name = list_name[0]
+      return str_name
       break
-    return str_name
 
+
+
+def introduction(difficulty, str_name):
 # Add difficulties
   print("The game you will be playing is a Number Guessing Game. Your task is to guess the correct \nnumber. ")
   print("Depending on what difficulty you choose, the game may be easier or harder.")
@@ -86,7 +92,8 @@ def easy_difficulty(guess, answer, lives, str_name):
       print("The number is smaller than {}".format(guess))
     elif guess == answer:
       print(" ")
-        
+
+
 def medium_difficulty(guess, answer, lives, str_name):
   print("Your task is to guess a number from 1-50. Good luck!")
   while guess != answer:
@@ -108,6 +115,7 @@ def medium_difficulty(guess, answer, lives, str_name):
       print("The number is smaller than {}".format(guess))
     elif guess == answer:
       print(" ")
+
 
 def hard_difficulty(guess, answer, lives, str_name):
   print("Your task is to guess a number from 1-100. Good luck!")
@@ -132,7 +140,8 @@ def hard_difficulty(guess, answer, lives, str_name):
       print(" ")
 
 
-difficulty = introduction(difficulty)
+str_name = username(str_name)
+difficulty = introduction(difficulty, str_name)
 lives = lifecount()
 answer = randomdef(answer)
 if difficulty == 'easy':
