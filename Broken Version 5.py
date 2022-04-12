@@ -1,4 +1,4 @@
-# Guessing game v2: Adding difficulties, definitions and mini error catching as I go along.
+# Guessing game but broken.
 answer = 0
 guess = 11
 difficulty = 'N/A'
