@@ -77,76 +77,85 @@ def lifecount():
 def easy_difficulty(guess, answer, lives, str_name):
   print("Your task is to guess a number from 1-10. Good luck!")
   while guess != answer:
-    guess = int(input("Guess: "))
+    try:
+      guess = int(input("Guess: "))
 # If they get it right end game, if they get it wrong continue game.
-    if guess == answer:
-      print("Congratulations, {}. You guessed the correct number! It was {}.".format(str_name, answer))
-      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-      break
-    else:
-      print("INCORRECT")
-      lives -= 1
-    if lives <= 0:
-      print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
-      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-      break
+      if guess == answer:
+        print("Congratulations, {}. You guessed the correct number! It was {}.".format(str_name, answer))
+        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
+        break
+      else:
+        print("INCORRECT")
+        lives -= 1
+      if lives <= 0:
+        print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
+        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
+        break
 # Gives a hint as to whether the answer is higher or lower than the users guess.
-    if guess < answer:
-      print("The number is higher than {}.".format(guess))
-    elif guess > answer:
-      print("The number is smaller than {}".format(guess))
-    elif guess == answer:
-      print(" ")
+      if guess < answer:
+        print("The number is higher than {}.".format(guess))
+      elif guess > answer:
+        print("The number is smaller than {}".format(guess))
+      elif guess == answer:
+        print(" ")
+    except ValueError:
+      print("ERROR - Plesae try again.")
 
 
 def medium_difficulty(guess, answer, lives, str_name):
   print("Your task is to guess a number from 1-50. Good luck!")
   while guess != answer:
-    guess = int(input("Guess: "))
+    try:
+      guess = int(input("Guess: "))
 # If they get it right end game, if they get it wrong continue game.
-    if guess == answer:
-      print("Congratulations, {}. You guessed the correct number! It was {}.".format(str_name, answer))
-      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-      break
-    else:
-      print("INCORRECT")
-      lives -= 1
-    if lives <= 0:
-      print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
-      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-      break
+      if guess == answer:
+        print("Congratulations, {}. You guessed the correct number! It was {}.".format(str_name, answer))
+        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
+        break
+      else:
+        print("INCORRECT")
+        lives -= 1
+      if lives <= 0:
+        print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
+        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
+        break
 # Gives a hint as to whether the answer is higher or lower than the users guess.
-    if guess < answer:
-      print("The number is higher than {}.".format(guess))
-    elif guess > answer:
-      print("The number is smaller than {}".format(guess))
-    elif guess == answer:
-      print(" ")
+      if guess < answer:
+        print("The number is higher than {}.".format(guess))
+      elif guess > answer:
+        print("The number is smaller than {}".format(guess))
+      elif guess == answer:
+        print(" ")
+    except ValueError:
+      print("ERROR - Please try again.")
 
 
 def hard_difficulty(guess, answer, lives, str_name):
   print("Your task is to guess a number from 1-100. Good luck!")
   while guess != answer:
-    guess = int(input("Guess: "))
+    try:
+      guess = int(input("Guess: "))
 # If they get it right end game, if they get it wrong continue game.
-    if guess == answer:
-      print("Congratulations, {}. You guessed the correct number! It was {}.".format(str_name, answer))
-      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-      break
-    else:
-     print("INCORRECT")
-     lives -= 1
-     if lives <= 0:
-       print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
-       print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-       break
+      if guess == answer:
+        print("Congratulations, {}. You guessed the correct number! It was {}.".format(str_name, answer))
+        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
+        break
+      else:
+       print("INCORRECT")
+       lives -= 1
+       if lives <= 0:
+         print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
+         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
+         break
 # Gives a hint as to whether the answer is higher or lower than the users guess.
-    if guess < answer:
-      print("The number is higher than {}.".format(guess))
-    elif guess > answer:
-      print("The number is smaller than {}".format(guess))
-    elif guess == answer:
-      print(" ")
+      if guess < answer:
+        print("The number is higher than {}.".format(guess))
+      elif guess > answer:
+        print("The number is smaller than {}".format(guess))
+      elif guess == answer:
+        print(" ")
+    except ValueError:
+      print("ERROR - Please try again.")
 
 
 str_name = username(str_name)
