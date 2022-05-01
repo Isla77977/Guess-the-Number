@@ -48,16 +48,8 @@ def introduction(difficulty, str_name):
   print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
   print("Depending on what difficulty you choose, the game may be easier or harder.")
   print("You must now pick a difficulty: |:| Easy, Medium, or Hard. |:|")
-  difficulty = input('')
-  while difficulty != 'easy' or difficulty != 'medium' or difficulty != 'hard':
-    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-    print("ERROR - Please type in a valid difficulty")
-    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-    time.sleep(1)
-    clear_console()
-    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-    print("Pick a difficulty: |:| Easy, Medium, or Hard. |:|")
-    difficulty = input('')
+  difficulty = input('').strip().lower()
+  while True:
     if difficulty == 'easy':
       clear_console()
       print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
@@ -86,9 +78,14 @@ def introduction(difficulty, str_name):
       return(difficulty)
       break
     else:
+      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+      print("ERROR - Please type in a valid difficulty")
+      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+      time.sleep(1)
+      clear_console()
+      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
+      print("Pick a difficulty: |:| Easy, Medium, or Hard. |:|")
       difficulty = input('').strip().lower()
-      if difficulty == 'easy' or difficulty == 'medium' or difficulty == 'hard':
-        break
 
 #Creates the answer, that depending on whether the difficulty is easy, medium, or hard.
 def randomdef(answer):
