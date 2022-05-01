@@ -132,11 +132,12 @@ def easy_difficulty(guess, answer, lives, str_name):
         print('+=+=+=+=+=+=+=+')
         lives -= 1
       if lives <= 0:
-        time.sleep(0.3)
+        time.sleep(1)
         clear_console()
-        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
         print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
-        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+        break
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         break
 # Gives a hint as to whether the answer is higher or lower than the users guess.
@@ -155,6 +156,7 @@ def easy_difficulty(guess, answer, lives, str_name):
         time.sleep(2)
         clear_console()
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+        print("{} guesses remaining.".format(lives))
         print("Previous guesses:")
         print(guess_list)
         print("The number is smaller than {}.".format(guess))
@@ -162,7 +164,16 @@ def easy_difficulty(guess, answer, lives, str_name):
       elif guess == answer:
         print(" ")
     except ValueError:
+      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
       print("ERROR - Please try again.")
+      time.sleep(1)
+      clear_console()
+      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+      print("{} guesses remaining.".format(lives))
+      print("Previous guesses:")
+      print(guess_list)
+      print('')
+      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
 
       
 #Definition that allows the 'medium' difficulty to be played.
@@ -186,7 +197,12 @@ def medium_difficulty(guess, answer, lives, str_name):
         print('+=+=+=+=+=+=+=+')
         lives -= 1
       if lives <= 0:
+        time.sleep(1)
+        clear_console()
+        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
         print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
+        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+        break
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         break
 # Gives a hint as to whether the answer is higher or lower than the users guess.
@@ -205,14 +221,24 @@ def medium_difficulty(guess, answer, lives, str_name):
         time.sleep(2)
         clear_console()
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+        print("{} guesses remaining.".format(lives))
         print("Previous guesses:")
         print(guess_list)
-        print("The number is smaller than {}".format(guess))
+        print("The number is smaller than {}.".format(guess))
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
       elif guess == answer:
         print(" ")
     except ValueError:
+      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
       print("ERROR - Please try again.")
+      time.sleep(1)
+      clear_console()
+      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+      print("{} guesses remaining.".format(lives))
+      print("Previous guesses:")
+      print(guess_list)
+      print('')
+      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
 
       
 #Definition that allows the 'hard' difficulty to be played.
@@ -231,15 +257,20 @@ def hard_difficulty(guess, answer, lives, str_name):
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         break
       else:
-       print('+=+=+=+=+=+=+=+')
-       print("INCORRECT")
-       print('+=+=+=+=+=+=+=+')
-       lives -= 1
-       if lives <= 0:
-         print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
-         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-         break
-# Gives a hint as to whether the answer is higher or lower than the users guess. Also includes previous guesses.
+        print('+=+=+=+=+=+=+=+')
+        print("INCORRECT")
+        print('+=+=+=+=+=+=+=+')
+        lives -= 1
+      if lives <= 0:
+        time.sleep(1)
+        clear_console()
+        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+        print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
+        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+        break
+        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
+        break
+# Gives a hint as to whether the answer is higher or lower than the users guess.
       if guess < answer:
         print("The number is higher than {}.".format(guess))
         time.sleep(2)
@@ -255,14 +286,24 @@ def hard_difficulty(guess, answer, lives, str_name):
         time.sleep(2)
         clear_console()
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+        print("{} guesses remaining.".format(lives))
         print("Previous guesses:")
         print(guess_list)
-        print("The number is smaller than {}".format(guess))
+        print("The number is smaller than {}.".format(guess))
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
       elif guess == answer:
         print(" ")
     except ValueError:
+      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
       print("ERROR - Please try again.")
+      time.sleep(1)
+      clear_console()
+      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+      print("{} guesses remaining.".format(lives))
+      print("Previous guesses:")
+      print(guess_list)
+      print('')
+      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
 
 
 clear_console()
@@ -282,8 +323,8 @@ elif difficulty == 'hard':
 # - Lives system ✔
 # - Play again
 # - Error catching ✔
-# - A way to clear past guesses (while still keeping guess list)
-# - Guesses being displayed
+# - A way to clear past guesses (while still keeping guess list) ✔
+# - Guesses being displayed ✔
 # - Different difficulties ✔
 # - Add higher or lower ✔
 # - Add definitions ✔
