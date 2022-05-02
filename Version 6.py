@@ -1,4 +1,4 @@
-# Guessing game v7: Adding a 'Play-Again' system.
+# Guessing game v6: Displaying previous guesses, clearing console.
 #It is unethical to use copywrited code.
 #Allows these variables to be brought into definitions.
 answer = 0
@@ -38,8 +38,7 @@ def username(str_name):
       return str_name
       break
 
-#The patterns with '+=+=+=+=' act as seperators for different sentences/segments of the game. 
-#Makes it so all the code isn't just writing and actually includes some sort of imagery (in a way).
+
 
 #Definition that introduces the player to the game properly. Allows them to pick a difficulty.
 def introduction(difficulty, str_name):
@@ -124,9 +123,7 @@ def easy_difficulty(guess, answer, lives, str_name):
       guess_list.append(guess)
 # If they get it right end game, if they get it wrong continue game.
       if guess == answer:
-        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         print("Congratulations, {}. You guessed the correct number! It was {}.".format(str_name, answer))
-        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         break
       else:
@@ -140,15 +137,13 @@ def easy_difficulty(guess, answer, lives, str_name):
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
         print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-        time.sleep(2.5)
-        clear_console()
         break
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         break
 # Gives a hint as to whether the answer is higher or lower than the users guess.
       if guess < answer:
         print("The number is higher than {}.".format(guess))
-        time.sleep(1)
+        time.sleep(2)
         clear_console()
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
         print("{} guesses remaining.".format(lives))
@@ -158,7 +153,7 @@ def easy_difficulty(guess, answer, lives, str_name):
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
       elif guess > answer:
         print("The number is smaller than {}".format(guess))
-        time.sleep(1)
+        time.sleep(2)
         clear_console()
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
         print("{} guesses remaining.".format(lives))
@@ -193,9 +188,7 @@ def medium_difficulty(guess, answer, lives, str_name):
       guess_list.append(guess)
 # If they get it right end game, if they get it wrong continue game.
       if guess == answer:
-        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         print("Congratulations, {}. You guessed the correct number! It was {}.".format(str_name, answer))
-        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         break
       else:
@@ -209,15 +202,13 @@ def medium_difficulty(guess, answer, lives, str_name):
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
         print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-        time.sleep(2.5)
-        clear_console()
         break
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         break
 # Gives a hint as to whether the answer is higher or lower than the users guess.
       if guess < answer:
         print("The number is higher than {}.".format(guess))
-        time.sleep(1)
+        time.sleep(2)
         clear_console()
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
         print("{} guesses remaining.".format(lives))
@@ -227,7 +218,7 @@ def medium_difficulty(guess, answer, lives, str_name):
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
       elif guess > answer:
         print("The number is smaller than {}".format(guess))
-        time.sleep(1)
+        time.sleep(2)
         clear_console()
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
         print("{} guesses remaining.".format(lives))
@@ -262,9 +253,7 @@ def hard_difficulty(guess, answer, lives, str_name):
       guess_list.append(guess)
 # If they get it right end game, if they get it wrong continue game.
       if guess == answer:
-        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         print("Congratulations, {}. You guessed the correct number! It was {}.".format(str_name, answer))
-        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         break
       else:
@@ -278,15 +267,13 @@ def hard_difficulty(guess, answer, lives, str_name):
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
         print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-        time.sleep(2.5)
-        clear_console()
         break
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         break
 # Gives a hint as to whether the answer is higher or lower than the users guess.
       if guess < answer:
         print("The number is higher than {}.".format(guess))
-        time.sleep(1)
+        time.sleep(2)
         clear_console()
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
         print("{} guesses remaining.".format(lives))
@@ -296,7 +283,7 @@ def hard_difficulty(guess, answer, lives, str_name):
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
       elif guess > answer:
         print("The number is smaller than {}".format(guess))
-        time.sleep(1)
+        time.sleep(2)
         clear_console()
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
         print("{} guesses remaining.".format(lives))
@@ -319,68 +306,17 @@ def hard_difficulty(guess, answer, lives, str_name):
       print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
 
 
-
-
-
 clear_console()
 str_name = username(str_name)
 difficulty = introduction(difficulty, str_name)
 lives = lifecount()
 answer = randomdef(answer)
-while True:
-  if difficulty == 'easy':
-    easy_difficulty(guess, answer, lives, str_name)
-  elif difficulty == 'medium':
-    medium_difficulty(guess, answer, lives, str_name)
-  elif difficulty == 'hard':
-    hard_difficulty(guess, answer, lives, str_name)
-    time.sleep(1)
-    clear_console()
-  print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-  play_again = input("{}, would you like to play again? Please answer with 'Yes' or 'No': ".format(str_name)).strip().lower()
-  while True:
-    if play_again == 'no':
-      time.sleep(0.7)
-      clear_console()
-      print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-      print("Goodbye then. Play again another time!")
-      print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-      time.sleep(1.5)
-      clear_console()
-      break
-      
-    elif play_again == 'yes':
-      time.sleep(0.7)
-      clear_console()
-      print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-      print("Alright, good luck!")
-      print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-      time.sleep(2)
-      clear_console()
-      print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-      print("Pick a difficulty: |:| Easy, Medium, or Hard. |:|")
-      difficulty = input('').strip().lower()
-      time.sleep(1)
-      clear_console()
-      break
-    
-    else:
-      time.sleep(0.7)
-      clear_console()
-      print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-      print("ERROR - Please enter 'Yes' or 'No'. ")
-      print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-      time.sleep(1)
-      clear_console()
-      print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-      play_again = input("Would you like to play again? Answer with 'Yes' or 'No': ".format(str_name)).strip().lower()
-      print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-      break
-    
-  if play_again == 'no':
-    break
-      
-
+if difficulty == 'easy':
+  easy_difficulty(guess, answer, lives, str_name)
+elif difficulty == 'medium':
+  medium_difficulty(guess, answer, lives, str_name)
+elif difficulty == 'hard':
+  hard_difficulty(guess, answer, lives, str_name)
 
 
 # Things to add:
