@@ -126,7 +126,7 @@ def easy_difficulty(guess, answer, lives, str_name):
       if guess == answer:
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         print("Congratulations, {}. You guessed the correct number! It was {}.".format(str_name, answer))
-        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
+
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         break
       else:
@@ -195,7 +195,7 @@ def medium_difficulty(guess, answer, lives, str_name):
       if guess == answer:
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         print("Congratulations, {}. You guessed the correct number! It was {}.".format(str_name, answer))
-        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
+
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         break
       else:
@@ -264,7 +264,6 @@ def hard_difficulty(guess, answer, lives, str_name):
       if guess == answer:
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         print("Congratulations, {}. You guessed the correct number! It was {}.".format(str_name, answer))
-        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         break
       else:
@@ -325,13 +324,18 @@ def hard_difficulty(guess, answer, lives, str_name):
 clear_console()
 str_name = username(str_name)
 difficulty = introduction(difficulty, str_name)
-lives = lifecount()
-answer = randomdef(answer)
 while True:
+  lives = lifecount()
+  answer = randomdef(answer)
+
   if difficulty == 'easy':
     easy_difficulty(guess, answer, lives, str_name)
+    time.sleep(1)
+    clear_console()
   elif difficulty == 'medium':
     medium_difficulty(guess, answer, lives, str_name)
+    time.sleep(1)
+    clear_console()
   elif difficulty == 'hard':
     hard_difficulty(guess, answer, lives, str_name)
     time.sleep(1)
@@ -375,7 +379,36 @@ while True:
       print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
       play_again = input("Would you like to play again? Answer with 'Yes' or 'No': ".format(str_name)).strip().lower()
       print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-      break
+      if play_again != 'yes' and play_again != 'no':
+        time.sleep(0.7)
+        clear_console()
+        print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+        print("ERROR - Please enter 'Yes' or 'No'. ")
+        print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+        time.sleep(1)
+        clear_console()
+        print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+        play_again = input("Would you like to play again? Answer with 'Yes' or 'No': ".format(str_name)).strip().lower()
+        print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+      else:
+        if play_again == 'yes':
+          time.sleep(1)
+          clear_console()
+          print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+          print("Alright, good luck!")
+          print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+          time.sleep(1.5)
+          clear_console()
+          break
+        else:
+          time.sleep(1)
+          clear_console()
+          print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+          print("Goodbye then. Play again another time!")
+          print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+          time.sleep(1.5)
+          clear_console()
+          break
     
   if play_again == 'no':
     break
@@ -385,7 +418,7 @@ while True:
 
 # Things to add:
 # - Lives system ✔
-# - Play again
+# - Play again ✔
 # - Error catching ✔
 # - A way to clear past guesses (while still keeping guess list) ✔
 # - Guesses being displayed ✔
