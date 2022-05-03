@@ -1,4 +1,8 @@
 #Guessing game v2: Adding difficulties, definitions and mini error catching as I go along.
+#Author: Isla Adrian
+#Date Started: 5/4/22
+#DATES ARE NOT 100% ACCURATE - MOST ARE FROM THE DATE THEY WERE MOVED INTO A DIFFERENT FILE FOR ME TO WORK ON THE SAME MAIN.
+
 answer = 0
 guess = 11
 difficulty = 'N/A'

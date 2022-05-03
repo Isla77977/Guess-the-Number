@@ -1,4 +1,8 @@
 #Guessing game v1:
+#Author: Isla Adrian
+#Date Started: 15/3/22
+#DATES ARE NOT 100% ACCURATE - MOST ARE FROM THE DATE THEY WERE MOVED INTO A DIFFERENT FILE FOR ME TO WORK ON THE SAME MAIN.
+
 #Import random creates a randomizer that will give a number when it's used right.
 import random
 #These make it so the game runs since they're different (refer to line 15-20)

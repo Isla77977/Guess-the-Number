@@ -1,4 +1,8 @@
-# Guessing game but broken.
+# Guessing game v5 but broken.
+#Author: Isla Adrian
+#Date Started: 11/4/22
+#DATES ARE NOT 100% ACCURATE - MOST ARE FROM THE DATE THEY WERE MOVED INTO A DIFFERENT FILE FOR ME TO WORK ON THE SAME MAIN.
+
 answer = 0
 guess = 11
 difficulty = 'N/A'

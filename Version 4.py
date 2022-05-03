@@ -1,4 +1,6 @@
 # Guessing game v4: Working difficulties with messy code (no definitions).
+#Author: Isla Adrian
+#Date Started: 28/3/22
 import random
 answer = 0
 guess = 11

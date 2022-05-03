@@ -1,23 +1,31 @@
 # Guessing game v7: Adding a 'Play-Again' system.
+#Author: Isla Adrian
+#Date Started: 5/3/22
+#DATES ARE NOT 100% ACCURATE - MOST ARE FROM THE DATE THEY WERE MOVED INTO A DIFFERENT FILE FOR ME TO WORK ON THE SAME MAIN. This one is though.
+
+#Notes to self:
 #It is unethical to use copywrited code.
+
 #Allows these variables to be brought into definitions.
+
 answer = 0
 guess = 11
 difficulty = 'N/A'
 lives = 314159265358979323846264338327950288419716939937510
 str_name = 'N/A'
 import time
+import os
+import random
 
 #Adds code that will allow for console clearing.
 def clear_console():
-  import os
   clear = 'clear'
   os.system(clear)
 
 #Definition that asks for the user's name.
 def username(str_name):
   list_name = []
-# Ask the user their name. Includes Error Catching for anything smaller than 2 letters, nothing at all, and special characters/numbers are invalid.
+#Includes Error Catching for anything smaller than 2 letters, nothing at all, and special characters/numbers, making them invalid.
   print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
   str_name = input("Welcome! Please enter your name: \n").strip().title()
   print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
@@ -43,7 +51,6 @@ def username(str_name):
 
 #Definition that introduces the player to the game properly. Allows them to pick a difficulty.
 def introduction(difficulty, str_name):
-# Add difficulties
   print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
   print("The game you will be playing is a Number Guessing Game. Your task is to guess the correct \nnumber. ")
   print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
@@ -88,9 +95,8 @@ def introduction(difficulty, str_name):
       print("Pick a difficulty: |:| Easy, Medium, or Hard. |:|")
       difficulty = input('').strip().lower()
 
-#Creates the answer, that depending on whether the difficulty is easy, medium, or hard.
+#Creates the answer, using ranges to give a fair number whether the difficulty is easy, medium, or hard.
 def randomdef(answer):
-  import random
   answer = 0
   if difficulty == 'easy':
     answer = random.randrange(1, 10)
@@ -111,9 +117,10 @@ def lifecount():
     lives = 6
   return(lives)
 
-  
+
 #Definition that allows the 'easy' difficulty to be played.
 def easy_difficulty(guess, answer, lives, str_name):
+#Guess list allows any numbers the user has typed to be shown.
   guess_list = []
   print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
   print("Your task is to guess a number from 1-10. Good luck!")
@@ -122,7 +129,7 @@ def easy_difficulty(guess, answer, lives, str_name):
     try:
       guess = int(input("Guess: "))
       guess_list.append(guess)
-# If they get it right end game, if they get it wrong continue game.
+# If they get it right end game, if they get it wrong, it continues the game.
       if guess == answer:
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         print("Congratulations, {}. You guessed the correct number! It was {}.".format(str_name, answer))
@@ -137,6 +144,7 @@ def easy_difficulty(guess, answer, lives, str_name):
       if lives <= 0:
         time.sleep(1)
         clear_console()
+#If you run out of lives, you lose and the game ends.
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
         print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
@@ -180,7 +188,7 @@ def easy_difficulty(guess, answer, lives, str_name):
       print('')
       print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
 
-      
+
 #Definition that allows the 'medium' difficulty to be played.
 def medium_difficulty(guess, answer, lives, str_name):
   guess_list = []
@@ -191,7 +199,7 @@ def medium_difficulty(guess, answer, lives, str_name):
     try:
       guess = int(input("Guess: "))
       guess_list.append(guess)
-# If they get it right end game, if they get it wrong continue game.
+# If they get it right end game, if they get it wrong, it continues the game.
       if guess == answer:
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         print("Congratulations, {}. You guessed the correct number! It was {}.".format(str_name, answer))
@@ -206,6 +214,7 @@ def medium_difficulty(guess, answer, lives, str_name):
       if lives <= 0:
         time.sleep(1)
         clear_console()
+#If you run out of lives, you lose and the game ends.
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
         print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
@@ -249,7 +258,7 @@ def medium_difficulty(guess, answer, lives, str_name):
       print('')
       print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
 
-      
+
 #Definition that allows the 'hard' difficulty to be played.
 def hard_difficulty(guess, answer, lives, str_name):
   guess_list = []
@@ -260,7 +269,7 @@ def hard_difficulty(guess, answer, lives, str_name):
     try:
       guess = int(input("Guess: "))
       guess_list.append(guess)
-# If they get it right end game, if they get it wrong continue game.
+# If they get it right end game, if they get it wrong, it continues the game.
       if guess == answer:
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         print("Congratulations, {}. You guessed the correct number! It was {}.".format(str_name, answer))
@@ -274,6 +283,7 @@ def hard_difficulty(guess, answer, lives, str_name):
       if lives <= 0:
         time.sleep(1)
         clear_console()
+#If you run out of lives, you lose and the game ends.
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
         print("I'm sorry, you have run out of lives. The correct number was {}".format(answer))
         print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
@@ -320,7 +330,7 @@ def hard_difficulty(guess, answer, lives, str_name):
 
 
 
-
+#All the definitions that keep the game running. The 'while True' allows for the play-again code to work properly.
 clear_console()
 str_name = username(str_name)
 difficulty = introduction(difficulty, str_name)
@@ -340,6 +350,7 @@ while True:
     hard_difficulty(guess, answer, lives, str_name)
     time.sleep(1)
     clear_console()
+#Play-Again code.
   print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
   play_again = input("{}, would you like to play again? Please answer with 'Yes' or 'No': ".format(str_name)).strip().lower()
   while True:
@@ -352,7 +363,7 @@ while True:
       time.sleep(1.5)
       clear_console()
       break
-      
+
     elif play_again == 'yes':
       time.sleep(0.7)
       clear_console()
@@ -367,7 +378,7 @@ while True:
       time.sleep(1)
       clear_console()
       break
-    
+#Error catching in case someone decides to type anything other than 'yes' or 'no'.
     else:
       time.sleep(0.7)
       clear_console()
@@ -409,7 +420,7 @@ while True:
           time.sleep(1.5)
           clear_console()
           break
-    
+
   if play_again == 'no':
     break
       

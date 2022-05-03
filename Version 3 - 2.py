@@ -1,3 +1,8 @@
+#v3 of Guessing Game
+#Author: Isla Adrian
+#Date Started: 15/3/22
+#DATES ARE NOT 100% ACCURATE - MOST ARE FROM THE DATE THEY WERE MOVED INTO A DIFFERENT FILE FOR ME TO WORK ON THE SAME MAIN.
+
 #A simpler version to help break down problems (possibly). Only option is easy, doesn't include error catching, definitions, or anything else of the sort.
 import random
 lives = 3
