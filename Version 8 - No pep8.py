@@ -479,7 +479,7 @@ while True:
         time.sleep(1)
         clear_console()
         print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-        play_again = input("Would you like to play again? Answer with 'Yes' or 'No': ".format(str_name)).strip().lower()
+        play_again = input("Would you like to play again? Answer with 'Yes' or 'No': ").strip().lower()
         print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
       else:
         if play_again == 'yes':
