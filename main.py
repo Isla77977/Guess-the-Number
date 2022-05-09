@@ -115,7 +115,7 @@ def introduction(str_mode, str_name):
         if str_mode == 'easy':
             clear_console()
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-            print("You picked {}.".format(str_name, str_mode.title()))
+            print("You picked {}.".format(str_mode.title()))
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
             time.sleep(1.5)
             clear_console()
@@ -124,7 +124,7 @@ def introduction(str_mode, str_name):
         elif str_mode == 'medium':
             clear_console()
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-            print("You picked {}.".format(str_name, str_mode.title()))
+            print("You picked {}.".format(str_mode.title()))
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
             time.sleep(1.5)
             clear_console()
@@ -133,7 +133,7 @@ def introduction(str_mode, str_name):
         elif str_mode == 'hard':
             clear_console()
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-            print("You picked {}.".format(str_name, str_mode.title()))
+            print("You picked {}.".format(str_mode.title()))
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
             time.sleep(1.5)
             clear_console()
