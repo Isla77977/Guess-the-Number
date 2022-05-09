@@ -180,7 +180,7 @@ def easy_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
                 print("Your final score was {}.".format(int_scorecount))
                 print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                time.sleep(2)
+                time.sleep(1.5)
                 break
             else:
                 print('+=+=+=+=+=+=+=+')
@@ -200,7 +200,7 @@ def easy_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
                 print("Your final score was {}.".format(int_scorecount))
                 print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
-                time.sleep(2)
+                time.sleep(1.5)
                 clear_console()
                 break
 
@@ -274,7 +274,7 @@ def medium_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
                 print("Your final score was {}.".format(int_scorecount))
                 print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
-                time.sleep(2)
+                time.sleep(1.5)
                 break
             else:
                 print('+=+=+=+=+=+=+=+')
@@ -324,16 +324,16 @@ def medium_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                     print(" ")
         except ValueError:
             int_scorecount -= 500
-        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-        print("ERROR - Please try again.")
-        time.sleep(1)
-        clear_console()
-        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-        print("{} guesses remaining.".format(int_lives))
-        print("Previous guesses:")
-        print(guess_list)
-        print('')
-        print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+            print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+            print("ERROR - Please try again.")
+            time.sleep(1)
+            clear_console()
+            print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+            print("{} guesses remaining.".format(int_lives))
+            print("Previous guesses:")
+            print(guess_list)
+            print('')
+            print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
 
 
 # Definition that allows the 'hard' difficulty to be played.
@@ -369,7 +369,7 @@ def hard_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
                 print("Your final score was {}.".format(int_scorecount))
                 print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
-                time.sleep(2)
+                time.sleep(1.5)
                 break
             else:
                 print('+=+=+=+=+=+=+=+')
@@ -454,37 +454,38 @@ while True:
         time.sleep(1)
         clear_console()
 # Play-Again code.
-        print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-        print("{}, would you like to play again?".format(str_name))
-        print("Please answer with 'Yes' or 'No'")
-        play_again = input("").strip().lower()
-        while True:
-            if play_again == 'no':
-                time.sleep(0.7)
-                clear_console()
-                print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                print("Goodbye then. Play again another time!")
-                print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                time.sleep(1.5)
-                clear_console()
-                break
+    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+    print("{}, would you like to play again?".format(str_name))
+    print("Please answer with 'Yes' or 'No'")
+    play_again = input("").strip().lower()
+    while True:
+        if play_again == 'no':
+            time.sleep(0.7)
+            clear_console()
+            print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+            print("Goodbye then. Play again another time!")
+            print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+            time.sleep(1.5)
+            clear_console()
+            break
 
-            elif play_again == 'yes':
-                time.sleep(0.7)
-                clear_console()
-                print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                print("Alright, good luck!")
-                print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                time.sleep(2)
-                clear_console()
-                print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-                print("Pick a difficulty: |:| Easy, Medium, or Hard. |:|")
-                str_mode = input('').strip().lower()
-                time.sleep(1)
-                clear_console()
-                break
+        elif play_again == 'yes':
+            time.sleep(0.7)
+            clear_console()
+            print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+            print("Alright, good luck!")
+            print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+            time.sleep(2)
+            clear_console()
+            print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
+            print("Pick a difficulty: |:| Easy, Medium, or Hard. |:|")
+            str_mode = input('').strip().lower()
+            time.sleep(1)
+            clear_console()
+            break
 # Error catching.
-            else:
+        else:
+            while play_again != 'yes' and play_again != 'no':
                 time.sleep(0.7)
                 clear_console()
                 print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
@@ -497,41 +498,11 @@ while True:
                 print("Please answer with 'Yes' or 'No'.")
                 play_again = input("").strip().lower()
                 print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-                if play_again != 'yes' and play_again != 'no':
-                    time.sleep(0.7)
-                    clear_console()
-                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                    print("ERROR - Please enter 'Yes' or 'No'. ")
-                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                    time.sleep(1)
-                    clear_console()
-                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-                    print("Would you like to play again?")
-                    print("Please answer with 'Yes' or 'No'.")
-                    play_again = input("").strip().lower()
-                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-                else:
-                    if play_again == 'yes':
-                        time.sleep(1)
-                        clear_console()
-                        print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                        print("Alright, good luck!")
-                        print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                        time.sleep(1.5)
-                        clear_console()
-                        break
-                    else:
-                        time.sleep(1)
-                        clear_console()
-                        print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                        print("Goodbye then. Play again another time!")
-                        print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                        time.sleep(1.5)
-                        clear_console()
-                        break
+                if play_again == 'yes' or play_again == 'no':
+                    break
 
-        if play_again == 'no':
-            break
+    if play_again == 'no':
+        break
 
 
 # Things to add:
