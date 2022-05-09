@@ -15,7 +15,7 @@ import random
 int_scorecount = 0
 int_answer = 0
 int_guess = 11
-str_difficulty = 'N/A'
+str_mode = 'N/A'
 int_lives = 314159265358979323846264338327950288419716939937510
 str_name = 'N/A'
 
@@ -29,11 +29,11 @@ def clear_console():
 # Creates the answer.
 def randomdef(int_answer):
     int_answer = 0
-    if str_difficulty == 'easy':
+    if str_mode == 'easy':
         int_answer = random.randrange(1, 10)
-    elif str_difficulty == 'medium':
+    elif str_mode == 'medium':
         int_answer = random.randrange(1, 50)
-    elif str_difficulty == 'hard':
+    elif str_mode == 'hard':
         int_answer = random.randrange(1, 100)
     return int_answer
 
@@ -41,11 +41,11 @@ def randomdef(int_answer):
 # Creates the lives.
 def lifecount():
     int_lives = 100
-    if str_difficulty == 'easy':
+    if str_mode == 'easy':
         int_lives = 4
-    elif str_difficulty == 'medium':
+    elif str_mode == 'medium':
         int_lives = 5
-    elif str_difficulty == 'hard':
+    elif str_mode == 'hard':
         int_lives = 6
     return(int_lives)
 
@@ -103,41 +103,41 @@ def username(str_name):
 # Makes it so all the code isn't just writing.
 
 # Introduces the player to the game. Lets them to pick a difficulty.
-def introduction(str_difficulty, str_name):
+def introduction(str_mode, str_name):
     print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
     print("The game you will be playing is a Number Guessing Game.")
     print("Your task is to guess the correct number. ")
     print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
     print("The difficulty will decide how easy or hard the game is.")
     print("You must now pick a difficulty: |:| Easy, Medium, or Hard. |:|")
-    str_difficulty = input('').strip().lower()
+    str_mode = input('').strip().lower()
     while True:
-        if str_difficulty == 'easy':
+        if str_mode == 'easy':
             clear_console()
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-            print("You picked {}.".format(str_name, str_difficulty.title()))
+            print("You picked {}.".format(str_name, str_mode.title()))
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
             time.sleep(1.5)
             clear_console()
-            return(str_difficulty)
+            return(str_mode)
             break
-        elif str_difficulty == 'medium':
+        elif str_mode == 'medium':
             clear_console()
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-            print("You picked {}.".format(str_name, str_difficulty.title()))
+            print("You picked {}.".format(str_name, str_mode.title()))
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
             time.sleep(1.5)
             clear_console()
-            return(str_difficulty)
+            return(str_mode)
             break
-        elif str_difficulty == 'hard':
+        elif str_mode == 'hard':
             clear_console()
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-            print("You picked {}.".format(str_name, str_difficulty.title()))
+            print("You picked {}.".format(str_name, str_mode.title()))
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
             time.sleep(1.5)
             clear_console()
-            return(str_difficulty)
+            return(str_mode)
             break
         else:
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
@@ -147,11 +147,11 @@ def introduction(str_difficulty, str_name):
             clear_console()
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
             print("Pick a difficulty: |:| Easy, Medium, or Hard. |:|")
-            str_difficulty = input('').strip().lower()
+            str_mode = input('').strip().lower()
 
 
 # Definition that allows the 'easy' difficulty to be played.
-def easy_difficulty(int_guess, int_answer, int_lives, str_name, int_scorecount):
+def easy_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
     # Guess list allows any numbers the user has typed to be shown.
     guess_list = []
     print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
@@ -244,7 +244,7 @@ def easy_difficulty(int_guess, int_answer, int_lives, str_name, int_scorecount):
 
 
 # Definition that allows the 'medium' difficulty to be played.
-def medium_difficulty(int_guess, int_answer, int_lives, str_name, int_scorecount):
+def medium_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
     guess_list = []
     print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
     print("Your task is to guess a number from 1-50. Good luck!")
@@ -337,7 +337,7 @@ def medium_difficulty(int_guess, int_answer, int_lives, str_name, int_scorecount
 
 
 # Definition that allows the 'hard' difficulty to be played.
-def hard_difficulty(int_guess, int_answer, int_lives, str_name, int_scorecount):
+def hard_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
     guess_list = []
     print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
     print("Your task is to guess a number from 1-100. Good luck!")
@@ -436,21 +436,21 @@ def hard_difficulty(int_guess, int_answer, int_lives, str_name, int_scorecount):
 # The 'while True' allows for the play-again code to work properly.
 clear_console()
 str_name = username(str_name)
-str_difficulty = introduction(str_difficulty, str_name)
+str_mode = introduction(str_mode, str_name)
 while True:
     int_lives = lifecount()
     int_answer = randomdef(int_answer)
     int_scorecount = scoreboard(int_scorecount)
-    if str_difficulty == 'easy':
-        easy_difficulty(int_guess, int_answer, int_lives, str_name, int_scorecount)
+    if str_mode == 'easy':
+        easy_mode(int_guess, int_answer, int_lives, str_name, int_scorecount)
         time.sleep(1)
         clear_console()
-    elif str_difficulty == 'medium':
-        medium_difficulty(int_guess, int_answer, int_lives, str_name, int_scorecount)
+    elif str_mode == 'medium':
+        medium_mode(int_guess, int_answer, int_lives, str_name, int_scorecount)
         time.sleep(1)
         clear_console()
-    elif str_difficulty == 'hard':
-        hard_difficulty(int_guess, int_answer, int_lives, str_name, int_scorecount)
+    elif str_mode == 'hard':
+        hard_mode(int_guess, int_answer, int_lives, str_name, int_scorecount)
         time.sleep(1)
         clear_console()
 # Play-Again code.
@@ -479,7 +479,7 @@ while True:
                 clear_console()
                 print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
                 print("Pick a difficulty: |:| Easy, Medium, or Hard. |:|")
-                str_difficulty = input('').strip().lower()
+                str_mode = input('').strip().lower()
                 time.sleep(1)
                 clear_console()
                 break
