@@ -16,7 +16,7 @@ int_scorecount = 0
 int_answer = 0
 int_guess = 11
 str_difficulty = 'N/A'
-int_lives = 31415926535897932384626433832795028841971693993751058209749445923078164
+int_lives = 314159265358979323846264338327950288419716939937510
 str_name = 'N/A'
 
 
@@ -115,7 +115,7 @@ def introduction(str_difficulty, str_name):
         if str_difficulty == 'easy':
             clear_console()
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-            print("Okay, you picked {}.".format(str_name, str_difficulty.title()))
+            print("You picked {}.".format(str_name, str_difficulty.title()))
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
             time.sleep(1.5)
             clear_console()
@@ -124,7 +124,7 @@ def introduction(str_difficulty, str_name):
         elif str_difficulty == 'medium':
             clear_console()
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-            print("Okay, you picked {}.".format(str_name, str_difficulty.title()))
+            print("You picked {}.".format(str_name, str_difficulty.title()))
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
             time.sleep(1.5)
             clear_console()
@@ -133,7 +133,7 @@ def introduction(str_difficulty, str_name):
         elif str_difficulty == 'hard':
             clear_console()
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-            print("Okay, you picked {}.".format(str_name, str_difficulty.title()))
+            print("You picked {}.".format(str_name, str_difficulty.title()))
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
             time.sleep(1.5)
             clear_console()
