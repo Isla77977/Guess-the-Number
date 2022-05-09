@@ -204,8 +204,21 @@ def easy_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 clear_console()
                 break
 
+            if int_guess > 10:
+                int_lives += 1
+                int_scorecount -= 500
+                print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                print("ERROR - Please try again.")
+                time.sleep(1)
+                clear_console()
+                print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                print("{} guesses remaining.".format(int_lives))
+                print("Previous guesses:")
+                print(guess_list)
+                print(" ")
+                print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                                
 # Gives hint as to whether the answer is higher or lower than the users guess.
-            if int_guess < int_answer:
                 int_scorecount += 1000
                 print("The number is higher than {}.".format(int_guess))
                 time.sleep(1)
