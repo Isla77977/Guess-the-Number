@@ -196,7 +196,7 @@ def easy_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                     if int_lives > 1:
                         print("{} guesses remaining.".format(int_lives))
                     else:
-                        print("{} guess remaining.".format(int_lives))  
+                        print("{} guess remaining.".format(int_lives))
                     print("Previous guesses:")
                     print(guess_list)
                     print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
@@ -237,7 +237,7 @@ def easy_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 if int_lives > 1:
                     print("{} guesses remaining.".format(int_lives))
                 else:
-                    print("{} guess remaining.".format(int_lives))  
+                    print("{} guess remaining.".format(int_lives))
                 print("Previous guesses:")
                 print(guess_list)
                 print("The number is higher than {}.".format(int_guess))
@@ -251,7 +251,7 @@ def easy_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 if int_lives > 1:
                     print("{} guesses remaining.".format(int_lives))
                 else:
-                    print("{} guess remaining.".format(int_lives))  
+                    print("{} guess remaining.".format(int_lives))
                 print("Previous guesses:")
                 print(guess_list)
                 print("The number is smaller than {}.".format(int_guess))
@@ -268,7 +268,7 @@ def easy_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
             if int_lives > 1:
                 print("{} guesses remaining.".format(int_lives))
             else:
-                print("{} guess remaining.".format(int_lives))  
+                print("{} guess remaining.".format(int_lives))
             print("Previous guesses:")
             print(guess_list)
             print('')
@@ -321,7 +321,7 @@ def medium_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                     if int_lives > 1:
                         print("{} guesses remaining.".format(int_lives))
                     else:
-                      print("{} guess remaining.".format(int_lives))  
+                        print("{} guess remaining.".format(int_lives))
                     print("Previous guesses:")
                     print(guess_list)
                     print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
@@ -361,7 +361,7 @@ def medium_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 if int_lives > 1:
                     print("{} guesses remaining.".format(int_lives))
                 else:
-                    print("{} guess remaining.".format(int_lives))  
+                    print("{} guess remaining.".format(int_lives))
                 print("Previous guesses:")
                 print(guess_list)
                 print("The number is higher than {}.".format(int_guess))
@@ -375,7 +375,7 @@ def medium_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 if int_lives > 1:
                     print("{} guesses remaining.".format(int_lives))
                 else:
-                    print("{} guess remaining.".format(int_lives))  
+                    print("{} guess remaining.".format(int_lives))
                 print("Previous guesses:")
                 print(guess_list)
                 print("The number is smaller than {}.".format(int_guess))
@@ -392,7 +392,7 @@ def medium_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
             if int_lives > 1:
                 print("{} guesses remaining.".format(int_lives))
             else:
-                print("{} guess remaining.".format(int_lives))  
+                print("{} guess remaining.".format(int_lives))
             print("Previous guesses:")
             print(guess_list)
             print('')
@@ -447,7 +447,7 @@ def hard_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                     if int_lives > 1:
                         print("{} guesses remaining.".format(int_lives))
                     else:
-                      print("{} guess remaining.".format(int_lives))  
+                        print("{} guess remaining.".format(int_lives))
                     print("Previous guesses:")
                     print(guess_list)
                     print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
@@ -488,7 +488,7 @@ def hard_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 if int_lives > 1:
                     print("{} guesses remaining.".format(int_lives))
                 else:
-                    print("{} guess remaining.".format(int_lives))  
+                    print("{} guess remaining.".format(int_lives))
                 print("Previous guesses:")
                 print(guess_list)
                 print("The number is higher than {}.".format(int_guess))
@@ -502,7 +502,7 @@ def hard_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 if int_lives > 1:
                     print("{} guesses remaining.".format(int_lives))
                 else:
-                    print("{} guess remaining.".format(int_lives))  
+                    print("{} guess remaining.".format(int_lives))
                 print("Previous guesses:")
                 print(guess_list)
                 print("The number is smaller than {}.".format(int_guess))
@@ -519,7 +519,7 @@ def hard_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
             if int_lives > 1:
                 print("{} guesses remaining.".format(int_lives))
             else:
-                print("{} guess remaining.".format(int_lives))  
+                print("{} guess remaining.".format(int_lives))
             print("Previous guesses:")
             print(guess_list)
             print('')
