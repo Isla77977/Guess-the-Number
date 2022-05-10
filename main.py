@@ -60,7 +60,8 @@ def username(str_name):
     list_name = []
 # Includes Error Catching.
     print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
-    str_name = input("Welcome! Please enter your name: \n").strip().title()
+    print("Welcome!")
+    str_name = input("Please enter your name: \n").strip().title()
     print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
     while True:
         if str_name == '':
@@ -180,9 +181,31 @@ def easy_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
                 print("Your final score was {}.".format(int_scorecount))
                 print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                time.sleep(1.5)
+                time.sleep(2)
                 break
-            else:
+            while True:
+                if int_guess > 10 or int_guess < 0:
+                    int_scorecount -= 500
+                    guess_list.pop()
+                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    print("ERROR - Please try again.")
+                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    time.sleep(1)
+                    clear_console()
+                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    if int_lives > 1:
+                        print("{} guesses remaining.".format(int_lives))
+                    else:
+                        print("{} guess remaining.".format(int_lives))  
+                    print("Previous guesses:")
+                    print(guess_list)
+                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    int_guess = int(input("Guess: "))
+                    int_guess
+                    guess_list.append(int_guess)
+                else:
+                    break
+            if int_guess != int_answer:
                 print('+=+=+=+=+=+=+=+')
                 print("INCORRECT")
                 print('+=+=+=+=+=+=+=+')
@@ -200,31 +223,21 @@ def easy_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
                 print("Your final score was {}.".format(int_scorecount))
                 print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
-                time.sleep(1.5)
+                time.sleep(2)
                 clear_console()
                 break
 
-            if int_guess > 10:
-                int_lives += 1
-                int_scorecount -= 500
-                print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                print("ERROR - Please try again.")
-                time.sleep(1)
-                clear_console()
-                print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                print("{} guesses remaining.".format(int_lives))
-                print("Previous guesses:")
-                print(guess_list)
-                print(" ")
-                print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                                
-# Gives hint as to whether the answer is higher or lower than the users guess.
+            if int_guess < int_answer:
+                # Gives hint as to whether the answer is higher or lower.
                 int_scorecount += 1000
                 print("The number is higher than {}.".format(int_guess))
                 time.sleep(1)
                 clear_console()
                 print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                print("{} guesses remaining.".format(int_lives))
+                if int_lives > 1:
+                    print("{} guesses remaining.".format(int_lives))
+                else:
+                    print("{} guess remaining.".format(int_lives))  
                 print("Previous guesses:")
                 print(guess_list)
                 print("The number is higher than {}.".format(int_guess))
@@ -235,7 +248,10 @@ def easy_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 time.sleep(1)
                 clear_console()
                 print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                print("{} guesses remaining.".format(int_lives))
+                if int_lives > 1:
+                    print("{} guesses remaining.".format(int_lives))
+                else:
+                    print("{} guess remaining.".format(int_lives))  
                 print("Previous guesses:")
                 print(guess_list)
                 print("The number is smaller than {}.".format(int_guess))
@@ -249,7 +265,10 @@ def easy_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
             time.sleep(1)
             clear_console()
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-            print("{} guesses remaining.".format(int_lives))
+            if int_lives > 1:
+                print("{} guesses remaining.".format(int_lives))
+            else:
+                print("{} guess remaining.".format(int_lives))  
             print("Previous guesses:")
             print(guess_list)
             print('')
@@ -287,54 +306,82 @@ def medium_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
                 print("Your final score was {}.".format(int_scorecount))
                 print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
-                time.sleep(1.5)
+                time.sleep(2)
                 break
-            else:
-                print('+=+=+=+=+=+=+=+')
-                print("INCORRECT")
-                print('+=+=+=+=+=+=+=+')
-                int_lives -= 1
-                if int_lives <= 0:
+            while True:
+                if int_guess > 50 or int_guess < 0:
+                    int_scorecount -= 500
+                    guess_list.pop()
+                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    print("ERROR - Please try again.")
+                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
                     time.sleep(1)
                     clear_console()
-# If you run out of lives, you lose and the game ends.
-                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                    print("I'm sorry, you have run out of lives.")
-                    print("The correct number was {}".format(int_answer))
-                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                    time.sleep(2)
-                    clear_console()
-                    print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
-                    print("Your final score was {}.".format(int_scorecount))
-                    print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
-                    time.sleep(2)
-                    clear_console()
+                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    if int_lives > 1:
+                        print("{} guesses remaining.".format(int_lives))
+                    else:
+                      print("{} guess remaining.".format(int_lives))  
+                    print("Previous guesses:")
+                    print(guess_list)
+                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    int_guess = int(input("Guess: "))
+                    int_guess
+                    guess_list.append(int_guess)
+                else:
                     break
+            if int_guess != int_answer:
+                print('+=+=+=+=+=+=+=+')
+            print("INCORRECT")
+            print('+=+=+=+=+=+=+=+')
+            int_lives -= 1
+            if int_lives <= 0:
+                time.sleep(1)
+                clear_console()
+# If you run out of lives, you lose and the game ends.
+                print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                print("I'm sorry, you have run out of lives.")
+                print("The correct number was {}".format(int_answer))
+                print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                time.sleep(2)
+                clear_console()
+                print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
+                print("Your final score was {}.".format(int_scorecount))
+                print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
+                time.sleep(2)
+                clear_console()
+                break
 # Gives hint as to whether the answer is higher or lower than the users guess.
-                if int_guess < int_answer:
-                    int_scorecount += 1000
-                    print("The number is higher than {}.".format(int_guess))
-                    time.sleep(1)
-                    clear_console()
-                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+            if int_guess < int_answer:
+                int_scorecount += 1000
+                print("The number is higher than {}.".format(int_guess))
+                time.sleep(1)
+                clear_console()
+                print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                if int_lives > 1:
                     print("{} guesses remaining.".format(int_lives))
-                    print("Previous guesses:")
-                    print(guess_list)
-                    print("The number is higher than {}.".format(int_guess))
-                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                elif int_guess > int_answer:
-                    int_scorecount += 1000
-                    print("The number is smaller than {}".format(int_guess))
-                    time.sleep(1)
-                    clear_console()
-                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                else:
+                    print("{} guess remaining.".format(int_lives))  
+                print("Previous guesses:")
+                print(guess_list)
+                print("The number is higher than {}.".format(int_guess))
+                print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+            elif int_guess > int_answer:
+                int_scorecount += 1000
+                print("The number is smaller than {}".format(int_guess))
+                time.sleep(1)
+                clear_console()
+                print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                if int_lives > 1:
                     print("{} guesses remaining.".format(int_lives))
-                    print("Previous guesses:")
-                    print(guess_list)
-                    print("The number is smaller than {}.".format(int_guess))
-                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                elif int_guess == int_answer:
-                    print(" ")
+                else:
+                    print("{} guess remaining.".format(int_lives))  
+                print("Previous guesses:")
+                print(guess_list)
+                print("The number is smaller than {}.".format(int_guess))
+                print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+            elif int_guess == int_answer:
+                print(" ")
         except ValueError:
             int_scorecount -= 500
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
@@ -342,7 +389,10 @@ def medium_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
             time.sleep(1)
             clear_console()
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-            print("{} guesses remaining.".format(int_lives))
+            if int_lives > 1:
+                print("{} guesses remaining.".format(int_lives))
+            else:
+                print("{} guess remaining.".format(int_lives))  
             print("Previous guesses:")
             print(guess_list)
             print('')
@@ -382,9 +432,31 @@ def hard_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
                 print("Your final score was {}.".format(int_scorecount))
                 print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
-                time.sleep(1.5)
+                time.sleep(2)
                 break
-            else:
+            while True:
+                if int_guess > 100 or int_guess < 0:
+                    int_scorecount -= 500
+                    guess_list.pop()
+                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    print("ERROR - Please try again.")
+                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    time.sleep(1)
+                    clear_console()
+                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    if int_lives > 1:
+                        print("{} guesses remaining.".format(int_lives))
+                    else:
+                      print("{} guess remaining.".format(int_lives))  
+                    print("Previous guesses:")
+                    print(guess_list)
+                    print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    int_guess = int(input("Guess: "))
+                    int_guess
+                    guess_list.append(int_guess)
+                else:
+                    break
+            if int_guess != int_answer:
                 print('+=+=+=+=+=+=+=+')
                 print("INCORRECT")
                 print('+=+=+=+=+=+=+=+')
@@ -413,7 +485,10 @@ def hard_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 time.sleep(1)
                 clear_console()
                 print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                print("{} guesses remaining.".format(int_lives))
+                if int_lives > 1:
+                    print("{} guesses remaining.".format(int_lives))
+                else:
+                    print("{} guess remaining.".format(int_lives))  
                 print("Previous guesses:")
                 print(guess_list)
                 print("The number is higher than {}.".format(int_guess))
@@ -424,7 +499,10 @@ def hard_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 time.sleep(1)
                 clear_console()
                 print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                print("{} guesses remaining.".format(int_lives))
+                if int_lives > 1:
+                    print("{} guesses remaining.".format(int_lives))
+                else:
+                    print("{} guess remaining.".format(int_lives))  
                 print("Previous guesses:")
                 print(guess_list)
                 print("The number is smaller than {}.".format(int_guess))
@@ -438,7 +516,10 @@ def hard_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
             time.sleep(1)
             clear_console()
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-            print("{} guesses remaining.".format(int_lives))
+            if int_lives > 1:
+                print("{} guesses remaining.".format(int_lives))
+            else:
+                print("{} guess remaining.".format(int_lives))  
             print("Previous guesses:")
             print(guess_list)
             print('')
