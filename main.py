@@ -18,6 +18,8 @@ int_guess = 11
 str_mode = 'N/A'
 int_lives = 314159265358979323846264338327950288419716939937510
 str_name = 'N/A'
+guess_list = []
+list_name = []
 
 
 # Adds code that will allow for console clearing.
@@ -154,7 +156,6 @@ def introduction(str_mode, str_name):
 # Definition that allows the 'easy' difficulty to be played.
 def easy_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
     # Guess list allows any numbers the user has typed to be shown.
-    guess_list = []
     print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
     print("Your task is to guess a number from 1-10. Good luck!")
     print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
@@ -277,7 +278,6 @@ def easy_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
 
 # Definition that allows the 'medium' difficulty to be played.
 def medium_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
-    guess_list = []
     print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
     print("Your task is to guess a number from 1-50. Good luck!")
     print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
@@ -401,7 +401,6 @@ def medium_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
 
 # Definition that allows the 'hard' difficulty to be played.
 def hard_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
-    guess_list = []
     print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
     print("Your task is to guess a number from 1-100. Good luck!")
     print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
@@ -532,6 +531,7 @@ clear_console()
 str_name = username(str_name)
 str_mode = introduction(str_mode, str_name)
 while True:
+    guess_list = []
     int_lives = lifecount()
     int_answer = randomdef(int_answer)
     int_scorecount = scoreboard(int_scorecount)
