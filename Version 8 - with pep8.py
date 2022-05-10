@@ -2,9 +2,10 @@ import time
 import os
 import random
 
-# Guessing game v9: Add, change, or do anything.
+# Guessing game v8: Adding a scoreboard, tidying up code.
+# pep8 version
 # Author: Isla Adrian
-# Date Started: 10/5/22
+# Date Started: 6/5/22
 
 # Notes to self:
 # It is unethical to use copywrited code.
@@ -114,7 +115,25 @@ def introduction(str_mode, str_name):
     print("You must now pick a difficulty: |:| Easy, Medium, or Hard. |:|")
     str_mode = input('').strip().lower()
     while True:
-        if str_mode == 'easy' or str_mode == 'medium' or str_mode == 'hard':
+        if str_mode == 'easy':
+            clear_console()
+            print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
+            print("You picked {}.".format(str_mode.title()))
+            print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
+            time.sleep(1.5)
+            clear_console()
+            return(str_mode)
+            break
+        elif str_mode == 'medium':
+            clear_console()
+            print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
+            print("You picked {}.".format(str_mode.title()))
+            print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
+            time.sleep(1.5)
+            clear_console()
+            return(str_mode)
+            break
+        elif str_mode == 'hard':
             clear_console()
             print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
             print("You picked {}.".format(str_mode.title()))
