@@ -166,7 +166,7 @@ def easy_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 time.sleep(2)
                 break
             while True:
-                if int_guess > 10 or int_guess < 0:
+                if int_guess > 10 or int_guess < 1:
                     int_scorecount -= 500
                     guess_list.pop()
                     print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
@@ -290,7 +290,7 @@ def medium_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 time.sleep(2)
                 break
             while True:
-                if int_guess > 50 or int_guess < 0:
+                if int_guess > 50 or int_guess < 1:
                     int_scorecount -= 500
                     guess_list.pop()
                     print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
@@ -313,9 +313,9 @@ def medium_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                     break
             if int_guess != int_answer:
                 print('+=+=+=+=+=+=+=+')
-            print("INCORRECT")
-            print('+=+=+=+=+=+=+=+')
-            int_lives -= 1
+                print("INCORRECT")
+                print('+=+=+=+=+=+=+=+')
+                int_lives -= 1
             if int_lives <= 0:
                 time.sleep(1)
                 clear_console()
@@ -415,7 +415,7 @@ def hard_mode(int_guess, int_answer, int_lives, str_name, int_scorecount):
                 time.sleep(2)
                 break
             while True:
-                if int_guess > 100 or int_guess < 0:
+                if int_guess > 100 or int_guess < 1:
                     int_scorecount -= 500
                     guess_list.pop()
                     print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')

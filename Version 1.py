@@ -8,7 +8,7 @@ import random
 #These make it so the game runs since they're different (refer to line 15-20)
 answer = 0
 guess = 11
-#Asks the user their name and storing it in a variable.
+#Asks the user their name and stores it in a variable.
 str_name = input("Welcome! Please enter your name: ")
 #Creates Random Number Generator using the 'random' that was imported earlier.
 answer = random.randrange(0, 10)
