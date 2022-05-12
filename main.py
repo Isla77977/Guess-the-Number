@@ -1,7 +1,3 @@
-import time
-import os
-import random
-
 # Guessing game v9: Add, change, or do anything.
 # Author: Isla Adrian
 # Date Started: 10/5/22
@@ -11,6 +7,9 @@ import random
 
 # Allows these variables to be brought into definitions.
 
+import time
+import os
+import random
 int_scorecount = 0
 int_answer = 0
 int_guess = 11
