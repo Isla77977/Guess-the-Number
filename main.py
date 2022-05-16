@@ -10,13 +10,13 @@
 import time
 import os
 import random
-int_scorecount = 0
-int_answer = 0
-int_guess = 11
-str_mode = 'N/A'
-int_lives = 314159265358979323846264338327950288419716939937510
-str_name = 'N/A'
-int_text = 'N/A'
+int_scorecount = None
+int_answer = None
+int_guess = None
+str_mode = None
+int_lives = None
+str_name = None
+int_text = None
 guess_list = []
 list_name = []
 
