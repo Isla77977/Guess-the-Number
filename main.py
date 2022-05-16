@@ -311,11 +311,32 @@ while True:
             print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
             time.sleep(2)
             clear_console()
-            print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-            print("Pick a difficulty: |:| Easy, Medium, or Hard. |:|")
-            str_mode = input('').strip().lower()
-            time.sleep(1)
-            clear_console()
+            while True:
+                print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
+                print("Pick a difficulty: |:| Easy, Medium, or Hard. |:|")
+                str_mode = input('').strip().lower()
+                time.sleep(1)
+                clear_console()
+                if str_mode != 'easy':
+                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    print("ERROR - Please enter a valid difficulty. ")
+                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    time.sleep(1)
+                    clear_console()
+                elif str_mode != 'medium':
+                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    print("ERROR - Please enter a valid difficulty. ")
+                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    time.sleep(1)
+                    clear_console()
+                elif str_mode != 'hard':
+                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    print("ERROR - Please enter a valid difficulty. ")
+                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    time.sleep(1)
+                    clear_console()
+                else:
+                    break
             break
 # Error catching.
         else:
