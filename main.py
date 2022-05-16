@@ -178,7 +178,7 @@ def game(int_guess, int_answer, int_lives, str_name, int_scorecount, int_text):
                 print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
                 print("Your final score was {}.".format(int_scorecount))
                 print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                time.sleep(2)
+                time.sleep(1)
                 break
             while True:
                 if int_guess > int_text or int_guess < 1:
@@ -220,7 +220,7 @@ def game(int_guess, int_answer, int_lives, str_name, int_scorecount, int_text):
                 print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
                 print("Your final score was {}.".format(int_scorecount))
                 print("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+")
-                time.sleep(2)
+                time.sleep(1)
                 clear_console()
                 break
 
@@ -317,10 +317,25 @@ while True:
                 str_mode = input('').strip().lower()
                 clear_console()
                 if str_mode == 'easy':
+                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    print("Alright, good luck!")
+                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    time.sleep(2)
+                    clear_console()
                     break
                 elif str_mode == 'medium':
+                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    print("Alright, good luck!")
+                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    time.sleep(2)
+                    clear_console()
                     break
                 elif str_mode == 'hard':
+                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    print("Alright, good luck!")
+                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    time.sleep(2)
+                    clear_console()
                     break
                 else:
                     print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
