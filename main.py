@@ -315,28 +315,19 @@ while True:
                 print('+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=')
                 print("Pick a difficulty: |:| Easy, Medium, or Hard. |:|")
                 str_mode = input('').strip().lower()
-                time.sleep(1)
                 clear_console()
-                if str_mode != 'easy':
-                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                    print("ERROR - Please enter a valid difficulty. ")
-                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                    time.sleep(1)
-                    clear_console()
-                elif str_mode != 'medium':
-                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                    print("ERROR - Please enter a valid difficulty. ")
-                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                    time.sleep(1)
-                    clear_console()
-                elif str_mode != 'hard':
-                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                    print("ERROR - Please enter a valid difficulty. ")
-                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                    time.sleep(1)
-                    clear_console()
-                else:
+                if str_mode == 'easy':
                     break
+                elif str_mode != 'medium':
+                    break
+                elif str_mode != 'hard':
+                    break
+                else:
+                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    print("ERROR - Please enter a valid difficulty. ")
+                    print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
+                    time.sleep(1)
+                    clear_console()
             break
 # Error catching.
         else:
