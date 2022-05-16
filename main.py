@@ -318,9 +318,9 @@ while True:
                 clear_console()
                 if str_mode == 'easy':
                     break
-                elif str_mode != 'medium':
+                elif str_mode == 'medium':
                     break
-                elif str_mode != 'hard':
+                elif str_mode == 'hard':
                     break
                 else:
                     print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
