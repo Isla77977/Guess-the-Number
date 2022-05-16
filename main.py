@@ -1,4 +1,4 @@
-# Guessing game v9: Shorten code.
+# Guessing game v9: Shorten code (merge difficulties).
 # Author: Isla Adrian
 # Date Started: 10/5/22
 
@@ -10,13 +10,13 @@
 import time
 import os
 import random
-int_scorecount = None
-int_answer = None
-int_guess = None
-str_mode = None
-int_lives = None
-str_name = None
-int_text = None
+int_scorecount = 0
+int_answer = 0
+int_guess = 0
+str_mode = 'N/A'
+int_lives = 0
+str_name = 'N/A'
+int_text = 0
 guess_list = []
 list_name = []
 
@@ -86,7 +86,7 @@ def username(str_name):
             print("Welcome!")
             str_name = input("Please enter your name: \n").strip().title()
             print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
-        elif len(str_name) < 2:
+        elif len(str_name) <= 2:
             print('')
             print("ERROR - Please try again.")
             time.sleep(1)
