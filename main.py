@@ -78,39 +78,73 @@ def username(str_name):
     print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
     while True:
         if str_name == '':
-            print('')
-            print("ERROR - Please try again.")
             time.sleep(1)
             clear_console()
             print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
-            print("Welcome!")
+            print("ERROR - Please try again.")
+            print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
+            time.sleep(1.5)
+            clear_console()
+            print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
             str_name = input("Please enter your name: \n").strip().title()
             print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
         elif len(str_name) <= 2:
-            print('')
-            print("ERROR - Please try again.")
             time.sleep(1)
             clear_console()
             print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
-            print("Welcome!")
+            print("ERROR - Please try again.")
+            print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
+            time.sleep(1.5)
+            clear_console()
+            print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
             str_name = input("Please enter your name: \n").strip().title()
             print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
         elif str_name.replace(' ', '').isalpha() is False:
-            print('')
-            print("ERROR - Please try again.")
             time.sleep(1)
             clear_console()
             print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
-            print("Welcome!")
+            print("ERROR - Please try again.")
+            print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
+            time.sleep(1.5)
+            clear_console()
+            print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
             str_name = input("Please enter your name: \n").strip().title()
             print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
         else:
             time.sleep(0.7)
             clear_console()
-            list_name.append(str_name)
-            str_name = list_name[0]
-            return str_name
-            break
+            print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
+            print("Do you confirm you want this as your name?")
+            print("Please enter 'Yes' or 'No'.")
+            print('')
+            print("'"+ str_name +"'")
+            print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
+            int_text = input("").strip().lower()
+            if int_text == 'yes':
+                time.sleep(0.7)
+                clear_console()
+                print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
+                print("Okay, you may continue.")
+                print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
+                time.sleep(1)
+                clear_console()
+                list_name.append(str_name)
+                str_name = list_name[0]
+                return str_name
+                break
+            else:
+                time.sleep(1)
+                clear_console()
+                print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
+                print("Alright, you may pick a new name.")
+                print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
+                time.sleep(0.7)
+                clear_console()
+                print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
+                str_name = input("Please enter your name: \n").strip().title()
+                print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
+                time.sleep(0.7)
+                clear_console()
 
 
 # The patterns with '+=+=+=+=' act as seperators.
@@ -285,7 +319,7 @@ while True:
     int_answer = randomdef(int_answer)
     int_scorecount = scoreboard(int_scorecount)
     game(int_guess, int_answer, int_lives, str_name, int_scorecount, int_text)
-# Play-Again code.
+# Play Again code.
     time.sleep(1.5)
     clear_console()
     print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
@@ -316,6 +350,7 @@ while True:
                 print("Pick a difficulty: |:| Easy, Medium, or Hard. |:|")
                 str_mode = input('').strip().lower()
                 clear_console()
+                # Seperate lines for the same code so pep8 doesn't get mad.
                 if str_mode == 'easy':
                     print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
                     print("Alright, good luck!")
@@ -376,3 +411,4 @@ while True:
 # - Add higher or lower ✔
 # - Add definitions ✔
 # - End Score (points) ✔
+# All done!
