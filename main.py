@@ -70,14 +70,14 @@ def scoreboard(int_scorecount):
 
 # The patterns with '+=+=+=+=' act as seperators.
 # Makes it so all the code isn't just writing.
-    
+
 # Definition that asks for the user's name.
 def username(str_name, int_text):
     list_name = []
 # Includes Error Catching.
     print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
     print("Welcome!")
-    str_name = input("Please enter your name: \n").strip().title()
+    str_name = input("Enter your name: \n").strip().title()
     print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
     while True:
         if str_name == '':
@@ -89,7 +89,7 @@ def username(str_name, int_text):
             time.sleep(1.5)
             clear_console()
             print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
-            str_name = input("Please enter your name: \n").strip().title()
+            str_name = input("Enter your name: \n").strip().title()
             print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
         elif len(str_name) <= 2:
             time.sleep(1)
@@ -100,7 +100,7 @@ def username(str_name, int_text):
             time.sleep(1.5)
             clear_console()
             print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
-            str_name = input("Please enter your name: \n").strip().title()
+            str_name = input("Enter your name: \n").strip().title()
             print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
         elif str_name.replace(' ', '').isalpha() is False:
             time.sleep(1)
@@ -111,20 +111,19 @@ def username(str_name, int_text):
             time.sleep(1.5)
             clear_console()
             print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
-            str_name = input("Please enter your name: \n").strip().title()
+            str_name = input("Enter your name: \n").strip().title()
             print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
         else:
             while True:
-                if int_text != 'yes' and int_text != 'no':
-                    time.sleep(0.7)
-                    clear_console()
-                    print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
-                    print("Do you confirm you want this as your name?")
-                    print("Please enter 'Yes' or 'No'.")
-                    print('')
-                    print("'"+ str_name +"'")
-                    print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
-                    int_text = input("").strip().lower()
+                time.sleep(0.7)
+                clear_console()
+                print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
+                print("Do you confirm you want this as your name?")
+                print("Please enter 'Yes' or 'No'.")
+                print('')
+                print("'" + str_name.strip().title() + "'")
+                print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
+                int_text = input("").strip().lower()
                 if int_text == 'yes':
                     time.sleep(0.7)
                     clear_console()
@@ -146,33 +145,22 @@ def username(str_name, int_text):
                     time.sleep(0.7)
                     clear_console()
                     print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
-                    str_name = input("Please enter your name: \n").strip().title()
+                    str_name = input("Enter your name: \n").strip().title()
                     print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
                     time.sleep(0.7)
                     clear_console()
                     int_text == 'n/a'
                     break
                 else:
-                    while True:
-                        time.sleep(1)
-                        clear_console()
-                        print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
-                        print("ERROR - Please enter 'Yes' or 'No'.")
-                        print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
-                        time.sleep(0.7)
-                        clear_console()
-                        print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
-                        print("Do you confirm you want this as your name?")
-                        print("Please enter 'Yes' or 'No'.")
-                        print('')
-                        print("'"+ str_name +"'")
-                        print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
-                        int_text = input("").strip().lower()
-                        if int_text == 'yes' or int_text == 'no':
-                            break
+                    time.sleep(1)
+                    clear_console()
+                    print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
+                    print("ERROR - Please enter 'Yes' or 'No'.")
+                    print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
+                    time.sleep(0.7)
+                    clear_console()
                 if int_text == 'n/a':
                     break
-        
 
 
 # Introduces the player to the game. Lets them to pick a difficulty.
