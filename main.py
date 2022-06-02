@@ -2,7 +2,7 @@
 # Author: Isla Adrian
 # Date Started: 10/5/22
 
-# Notes to self:
+# Note to self:
 # It is unethical to use copywrited code.
 
 # Allows these variables to be brought into definitions.
