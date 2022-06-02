@@ -366,21 +366,21 @@ while True:
                 # Seperate lines for the same code so pep8 doesn't get mad.
                 if str_mode == 'easy':
                     print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                    print("Alright, good luck!")
+                    print("Have fun!")
                     print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
                     time.sleep(2)
                     clear_console()
                     break
                 elif str_mode == 'medium':
                     print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                    print("Alright, good luck!")
+                    print("Have fun!")
                     print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
                     time.sleep(2)
                     clear_console()
                     break
                 elif str_mode == 'hard':
                     print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
-                    print("Alright, good luck!")
+                    print("Have fun!")
                     print('=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+')
                     time.sleep(2)
                     clear_console()
